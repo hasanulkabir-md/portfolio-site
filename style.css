@@ -45,6 +45,7 @@ h2 {
   cursor: pointer;
   font-size: 1.2rem;
   color: #fff;
+  z-index: 1000;
 }
 
 /* Hero */
