@@ -1,154 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Your Name | Frontend Developer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Top bar with live clock + theme switch -->
-  <div class="topbar">
-    <div class="brand">Your Name</div>
-    <div class="live">
-      <span class="dot"></span> Live: <span id="liveClock">--:--:--</span>
-    </div>
-    <div class="theme-switch">
-      <label for="themeSelect">Theme</label>
-      <select id="themeSelect" aria-label="Theme selector">
-        <option value="auto">Auto</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-      </select>
-    </div>
-  </div>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
   <!-- Hero -->
   <header class="hero">
-    <h1>Frontend Developer</h1>
-    <p class="tagline"><span id="typeTarget">Building delightful, reliable web experiences</span></p>
-    <div class="cta">
-      <a class="btn primary" href="#projects">View Projects</a>
-      <a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">Download CV</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Your Name</h1>
+        <p class="role">Frontend Developer</p>
+        <p class="summary">
+          I build modern, responsive, and user-focused web applications. 
+          Skilled in JavaScript and React, I bring ideas to life with clean code and design.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="resume.pdf" class="btn secondary" target="_blank">Download CV</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="images/profile-placeholder.png" alt="Your Name">
+      </div>
     </div>
   </header>
 
   <!-- About -->
-  <section id="about" class="container">
-    <h2>About</h2>
+  <section id="about">
+    <h2>About Me</h2>
     <p>
-      I design and build responsive, accessible web interfaces with
-      <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and <strong>React</strong>.
-      I focus on clarity, performance, and maintainability. I’m currently seeking roles where I can contribute to
-      user-facing products and grow alongside a thoughtful engineering team.
+      I am a frontend developer passionate about crafting clean and functional web solutions. 
+      With experience in <strong>HTML, CSS, JavaScript, and React</strong>, I create applications that prioritize user experience and performance. 
+      I am seeking an opportunity to contribute to innovative teams, learn, and grow professionally.
     </p>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="container">
+  <section id="skills">
     <h2>Skills</h2>
-    <ul class="chips">
-      <li>HTML5</li><li>CSS3</li><li>JavaScript (ES6+)</li><li>React</li>
-      <li>Node.js (basic)</li><li>REST APIs</li><li>Git & GitHub</li><li>Responsive Design</li>
-    </ul>
+    <div class="skills-grid">
+      <span class="badge">HTML5</span>
+      <span class="badge">CSS3</span>
+      <span class="badge">JavaScript</span>
+      <span class="badge">React</span>
+      <span class="badge">Node.js</span>
+      <span class="badge">Git & GitHub</span>
+      <span class="badge">REST APIs</span>
+      <span class="badge">Responsive Design</span>
+    </div>
   </section>
 
-  <!-- Projects: Auto-rotating Gallery -->
-  <section id="projects" class="container">
-    <h2>Selected Projects</h2>
-
-    <div class="gallery" aria-label="Project gallery">
-      <button class="nav prev" aria-label="Previous project">❮</button>
-      <button class="nav next" aria-label="Next project">❯</button>
-
-      <div class="slides" id="slides" role="list">
-        <!-- Slide 1 -->
-        <article class="slide current" role="listitem" aria-roledescription="slide">
-          <div class="media gradient-1" aria-hidden="true"></div>
-          <div class="meta">
-            <h3>Portfolio Website</h3>
-            <p>Responsive personal site showcasing work, accessibility, and performance best practices.</p>
-            <p class="tags">#HTML #CSS #JS</p>
-            <p class="links">
-              <a href="#" target="_blank" rel="noopener">Live Demo</a>
-              <a href="#" target="_blank" rel="noopener">Source Code</a>
-            </p>
-          </div>
-        </article>
-
-        <!-- Slide 2 -->
-        <article class="slide" role="listitem" aria-roledescription="slide">
-          <div class="media gradient-2" aria-hidden="true"></div>
-          <div class="meta">
-            <h3>Task Manager App</h3>
-            <p>React app with CRUD tasks, offline-first local storage, and keyboard-friendly UI.</p>
-            <p class="tags">#React #Hooks #LocalStorage</p>
-            <p class="links">
-              <a href="#" target="_blank" rel="noopener">Live Demo</a>
-              <a href="#" target="_blank" rel="noopener">Source Code</a>
-            </p>
-          </div>
-        </article>
-
-        <!-- Slide 3 -->
-        <article class="slide" role="listitem" aria-roledescription="slide">
-          <div class="media gradient-3" aria-hidden="true"></div>
-          <div class="meta">
-            <h3>Weather Dashboard</h3>
-            <p>Clean dashboard consuming OpenWeather API with search history and responsive cards.</p>
-            <p class="tags">#API #JavaScript #UI</p>
-            <p class="links">
-              <a href="#" target="_blank" rel="noopener">Live Demo</a>
-              <a href="#" target="_blank" rel="noopener">Source Code</a>
-            </p>
-          </div>
-        </article>
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="images/project1.png" alt="Portfolio Website">
+        <h3>Portfolio Website</h3>
+        <p>A responsive portfolio site showcasing my work.</p>
+        <p class="tags">#HTML #CSS #JS</p>
+        <a href="#">Live Demo</a> | <a href="#">Source Code</a>
       </div>
-
-      <!-- Progress & Controls -->
-      <div class="controls">
-        <button id="playPause" class="btn sm" aria-label="Pause autoplay">Pause</button>
-        <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+      <div class="project-card">
+        <img src="images/project2.png" alt="Task Manager">
+        <h3>Task Manager</h3>
+        <p>A React-based app with CRUD features and local storage support.</p>
+        <p class="tags">#React #JS</p>
+        <a href="#">Live Demo</a> | <a href="#">Source Code</a>
       </div>
     </div>
-    <p class="hint">Tip: hover to pause • swipe / arrow keys to navigate</p>
   </section>
 
-  <!-- Contact (Netlify Forms ready) -->
-  <section id="contact" class="container">
+  <!-- Contact -->
+  <section id="contact">
     <h2>Contact</h2>
-    <p>Hiring or open to collaboration? Send a message — it goes straight to my inbox.</p>
-
-    <form name="contact" method="POST" data-netlify="true" class="contact-form">
-      <input type="hidden" name="form-name" value="contact"/>
-      <div class="grid">
-        <label>
-          Name
-          <input type="text" name="name" required/>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required/>
-        </label>
-      </div>
-      <label>
-        Message
-        <textarea name="message" rows="5" required></textarea>
-      </label>
-      <button class="btn primary" type="submit">Send Message</button>
-    </form>
-
-    <p class="social">
-      <a href="mailto:you@example.com">you@example.com</a> ·
-      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a> ·
-      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
-    </p>
+    <p>Let’s work together. Reach me at:</p>
+    <a href="mailto:you@example.com" class="btn primary">Email Me</a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank" class="btn secondary">LinkedIn</a>
+    <a href="https://github.com/yourusername" target="_blank" class="btn secondary">GitHub</a>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© <span id="year"></span> Your Name · Built for the web</p>
+    <p>© 2025 Your Name | Portfolio Website</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JS for theme toggle -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    }
+  </script>
 </body>
 </html>
