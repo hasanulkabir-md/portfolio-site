@@ -1,5 +1,7 @@
-function slideProjects(direction) {
-  const carousel = document.getElementById("projectsCarousel");
-  const scrollAmount = 320; // px (card width + gap)
-  carousel.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
-}
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute("data-theme");
+    html.setAttribute("data-theme", current === "light" ? "dark" : "light");
+  }
+</script>
