@@ -1,37 +1,35 @@
 /* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   line-height: 1.6;
   color: #333;
   background: #f9f9f9;
 }
 
-/* Header */
-header {
-  background: #222;
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
   color: #fff;
-  padding: 2rem;
+  padding: 4rem 1rem;
   text-align: center;
 }
-header .highlight {
-  color: #f39c12;
-}
-nav {
-  margin-top: 1rem;
-}
-nav a {
-  margin: 0 10px;
-  color: #f39c12;
+.hero .highlight { color: #f39c12; }
+.tagline { margin: 1rem 0; font-size: 1.2rem; }
+.cta-buttons { margin-top: 1.5rem; }
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  border-radius: 5px;
   text-decoration: none;
+  background: #f39c12;
+  color: #fff;
+  transition: background 0.3s ease;
 }
-nav a:hover {
-  text-decoration: underline;
-}
+.btn:hover { background: #d35400; }
+.btn.secondary { background: #34495e; }
+.btn.secondary:hover { background: #2c3e50; }
 
 /* Sections */
 section {
@@ -39,9 +37,21 @@ section {
   max-width: 900px;
   margin: auto;
 }
-h2 {
-  margin-bottom: 1rem;
-  color: #f39c12;
+h2 { margin-bottom: 1rem; color: #f39c12; }
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.skill {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-weight: bold;
 }
 
 /* Project Cards */
@@ -52,16 +62,13 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-.project-card h3 {
-  margin-bottom: 0.5rem;
-}
+.project-card h3 { margin-bottom: 0.5rem; }
 .project-card a {
   color: #f39c12;
   text-decoration: none;
+  font-weight: bold;
 }
-.project-card a:hover {
-  text-decoration: underline;
-}
+.project-card a:hover { text-decoration: underline; }
 
 /* Footer */
 footer {
