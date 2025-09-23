@@ -1,88 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Name | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <!-- Top bar with live clock + theme switch -->
+  <div class="topbar">
+    <div class="brand">Your Name</div>
+    <div class="live">
+      <span class="dot"></span> Live: <span id="liveClock">--:--:--</span>
+    </div>
+    <div class="theme-switch">
+      <label for="themeSelect">Theme</label>
+      <select id="themeSelect" aria-label="Theme selector">
+        <option value="auto">Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+  </div>
+
   <!-- Hero -->
   <header class="hero">
-    <div class="hero-content">
-      <h1>Your Name</h1>
-      <p class="tagline">Frontend Developer • Web Enthusiast • Problem Solver</p>
-      <div class="cta-buttons">
-        <a href="#projects" class="btn primary">View My Work</a>
-        <a href="resume.pdf" class="btn secondary" target="_blank">Download CV</a>
-      </div>
+    <h1>Frontend Developer</h1>
+    <p class="tagline"><span id="typeTarget">Building delightful, reliable web experiences</span></p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">Download CV</a>
     </div>
   </header>
 
   <!-- About -->
-  <section id="about">
-    <h2>About Me</h2>
+  <section id="about" class="container">
+    <h2>About</h2>
     <p>
-      I am a frontend developer passionate about building elegant, efficient, and user-friendly web applications. 
-      Skilled in <strong>HTML, CSS, JavaScript, and React</strong>, I create solutions that balance functionality with design.  
-      I am currently seeking opportunities to contribute to impactful projects where I can grow as a developer and deliver value to teams.
+      I design and build responsive, accessible web interfaces with
+      <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and <strong>React</strong>.
+      I focus on clarity, performance, and maintainability. I’m currently seeking roles where I can contribute to
+      user-facing products and grow alongside a thoughtful engineering team.
     </p>
   </section>
 
   <!-- Skills -->
-  <section id="skills">
-    <h2>Skills & Tools</h2>
-    <div class="skills-grid">
-      <span>HTML5</span><span>CSS3</span><span>JavaScript (ES6+)</span>
-      <span>React</span><span>Node.js</span><span>Git & GitHub</span>
-      <span>REST APIs</span><span>Responsive Design</span>
-    </div>
+  <section id="skills" class="container">
+    <h2>Skills</h2>
+    <ul class="chips">
+      <li>HTML5</li><li>CSS3</li><li>JavaScript (ES6+)</li><li>React</li>
+      <li>Node.js (basic)</li><li>REST APIs</li><li>Git & GitHub</li><li>Responsive Design</li>
+    </ul>
   </section>
 
-  <!-- Projects -->
-  <section id="projects">
+  <!-- Projects: Auto-rotating Gallery -->
+  <section id="projects" class="container">
     <h2>Selected Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-image"></div>
-        <h3>Portfolio Website</h3>
-        <p>A responsive personal site built with HTML, CSS, and JavaScript.</p>
-        <p class="tags">#HTML #CSS #JS</p>
-        <a href="#">Live Demo</a> | <a href="#">Source Code</a>
+
+    <div class="gallery" aria-label="Project gallery">
+      <button class="nav prev" aria-label="Previous project">❮</button>
+      <button class="nav next" aria-label="Next project">❯</button>
+
+      <div class="slides" id="slides" role="list">
+        <!-- Slide 1 -->
+        <article class="slide current" role="listitem" aria-roledescription="slide">
+          <div class="media gradient-1" aria-hidden="true"></div>
+          <div class="meta">
+            <h3>Portfolio Website</h3>
+            <p>Responsive personal site showcasing work, accessibility, and performance best practices.</p>
+            <p class="tags">#HTML #CSS #JS</p>
+            <p class="links">
+              <a href="#" target="_blank" rel="noopener">Live Demo</a>
+              <a href="#" target="_blank" rel="noopener">Source Code</a>
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 2 -->
+        <article class="slide" role="listitem" aria-roledescription="slide">
+          <div class="media gradient-2" aria-hidden="true"></div>
+          <div class="meta">
+            <h3>Task Manager App</h3>
+            <p>React app with CRUD tasks, offline-first local storage, and keyboard-friendly UI.</p>
+            <p class="tags">#React #Hooks #LocalStorage</p>
+            <p class="links">
+              <a href="#" target="_blank" rel="noopener">Live Demo</a>
+              <a href="#" target="_blank" rel="noopener">Source Code</a>
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 3 -->
+        <article class="slide" role="listitem" aria-roledescription="slide">
+          <div class="media gradient-3" aria-hidden="true"></div>
+          <div class="meta">
+            <h3>Weather Dashboard</h3>
+            <p>Clean dashboard consuming OpenWeather API with search history and responsive cards.</p>
+            <p class="tags">#API #JavaScript #UI</p>
+            <p class="links">
+              <a href="#" target="_blank" rel="noopener">Live Demo</a>
+              <a href="#" target="_blank" rel="noopener">Source Code</a>
+            </p>
+          </div>
+        </article>
       </div>
 
-      <div class="project-card">
-        <div class="project-image"></div>
-        <h3>Task Manager App</h3>
-        <p>A React-based app with CRUD features and local storage support.</p>
-        <p class="tags">#React #JavaScript</p>
-        <a href="#">Live Demo</a> | <a href="#">Source Code</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-image"></div>
-        <h3>Weather Dashboard</h3>
-        <p>Weather app integrating OpenWeather API for real-time forecasts.</p>
-        <p class="tags">#API #JavaScript</p>
-        <a href="#">Live Demo</a> | <a href="#">Source Code</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>If you are hiring or would like to collaborate, feel free to get in touch.</p>
-    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-    <p>
-      <a href="https://github.com/yourusername" target="_blank">GitHub</a> | 
-      <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Your Name | Designed & Built with care</p>
-  </footer>
-</body>
-</html>
+      <!-- Progress & Controls -->
+      <div class="controls">
+        <button id="playPause" class="btn sm" aria-label="Pause autoplay">Pause</button>
+        <div class="pro
