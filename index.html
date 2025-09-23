@@ -108,4 +108,47 @@
       <!-- Progress & Controls -->
       <div class="controls">
         <button id="playPause" class="btn sm" aria-label="Pause autoplay">Pause</button>
-        <div class="pro
+        <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+      </div>
+    </div>
+    <p class="hint">Tip: hover to pause • swipe / arrow keys to navigate</p>
+  </section>
+
+  <!-- Contact (Netlify Forms ready) -->
+  <section id="contact" class="container">
+    <h2>Contact</h2>
+    <p>Hiring or open to collaboration? Send a message — it goes straight to my inbox.</p>
+
+    <form name="contact" method="POST" data-netlify="true" class="contact-form">
+      <input type="hidden" name="form-name" value="contact"/>
+      <div class="grid">
+        <label>
+          Name
+          <input type="text" name="name" required/>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required/>
+        </label>
+      </div>
+      <label>
+        Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button class="btn primary" type="submit">Send Message</button>
+    </form>
+
+    <p class="social">
+      <a href="mailto:you@example.com">you@example.com</a> ·
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a> ·
+      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> Your Name · Built for the web</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
