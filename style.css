@@ -94,7 +94,7 @@ h2 {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  object-position: 50% 25%; /* shows lower face slightly */
+  object-position: 40% 60%; /* shows lower face slightly */
   border-radius: 50%;
   display: block;
   margin: 0 auto; /* centers horizontally */
