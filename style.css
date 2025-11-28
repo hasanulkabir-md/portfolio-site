@@ -197,38 +197,30 @@ h2 {
   font-size: 0.9rem;
   line-height: 1.5;
 }
-/* Education Section */
-.education-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+
+/* Projects slider (replaces .projects-grid) */
+.projects-slider {
   position: relative;
-  padding-left: 1rem;
-  border-left: 3px solid var(--accent);
-}
-.edu-item h3 {
-  margin-bottom: 0.3rem;
-  color: var(--text);
-}
-.edu-school {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-.edu-desc {
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 1rem;
+  padding-bottom: 0.5rem; /* keep small space for shadows */
 }
 
-/* Projects */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+.projects-track {
+  display: flex;
+  gap: 2rem; /* keeps your existing gap value */
+  transition: transform 0.55s cubic-bezier(.22,.9,.33,1);
+  will-change: transform;
+  padding-left: 0.25rem; /* small offset to center first card visually */
 }
+
+/* keep your .project-card visual styles, but add a sizing rule so cards become horizontal slides */
 .project-card {
+  flex: 0 0 320px;     /* fixed slide width — adjust to show more/less on screen */
+  max-width: 320px;
+  box-sizing: border-box;
+
   background: var(--card);
   border-radius: 10px;
   padding: 1.5rem;
@@ -290,30 +282,6 @@ footer {
   color: var(--muted);
   font-size: 0.9rem;
 }
-/* Education Section */
-.education-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  position: relative;
-  padding-left: 1rem;
-  border-left: 3px solid var(--accent);
-}
-.edu-item h3 {
-  margin-bottom: 0.3rem;
-  color: var(--text);
-}
-.edu-school {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-.edu-desc {
-  color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
 
 /* Blog Section */
 .blog-grid {
@@ -353,4 +321,13 @@ footer {
 }
 .read-more:hover {
   text-decoration: underline;
+}
+
+/* Responsive adjustments for project slide widths */
+@media (max-width: 900px) {
+  .project-card { flex: 0 0 280px; max-width: 280px; }
+}
+@media (max-width: 560px) {
+  .project-card { flex: 0 0 220px; max-width: 220px; padding: 1rem; }
+  .theme-toggle { top: 0.6rem; right: 0.6rem; }
 }
