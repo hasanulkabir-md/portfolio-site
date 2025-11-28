@@ -101,11 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function calcCardStep() {
-    cards = document.querySelectorAll('.project-card'); // refresh
-    const cw = cards[0] ? cards[0].offsetWidth : 0;
-    return cw + getGapPx();
-  }
+function calcCardStep() {
+  // On mobile we want one full viewport-width step
+  const sliderWidth = slider.clientWidth;
+  const card = cards[0];
+  if (!card) return sliderWidth;
+
+  // If cards are narrower than slider (desktop), use card width + gap
+  const gap = getGapPx();
+  const cardWidth = card.offsetWidth + gap;
+
+  // Choose the larger of the two so mobile = full width, desktop = card width
+  return Math.max(sliderWidth, cardWidth);
+}
 
   function moveTo(i) {
     if (!cards.length) return;
