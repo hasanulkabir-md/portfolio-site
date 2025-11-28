@@ -162,6 +162,38 @@ h2 {
 .btn.secondary { border: 2px solid var(--accent); color: var(--accent); }
 .btn.secondary:hover { background: var(--accent); color: #fff; }
 
+/* Prev / Next buttons for projects slider */
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 6px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: opacity 0.15s ease;
+}
+.slide-btn:hover,
+.slide-btn:focus { opacity: 0.95; outline: none; }
+.slide-btn:active { transform: translateY(-50%) scale(0.98); }
+
+.slide-btn.prev { left: 8px; }
+.slide-btn.next { right: 8px; }
+
+/* hide buttons on very small screens (keep UI simple) */
+@media (max-width: 560px) {
+  .slide-btn { display: none; }
+}
+
+
 /* Skills */
 .skills-grid {
   display: flex; flex-wrap: wrap; gap: 0.8rem;
