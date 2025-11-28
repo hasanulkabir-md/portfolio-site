@@ -364,3 +364,16 @@ footer {
   .project-card { flex: 0 0 220px; max-width: 220px; padding: 1rem; }
   .theme-toggle { top: 0.6rem; right: 0.6rem; }
 }
+
+/* Mobile: make each project card take full width of the slider */
+@media (max-width: 600px) {
+  .projects-track {
+    padding-left: 0;
+  }
+
+  .project-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 1.2rem;
+  }
+}
